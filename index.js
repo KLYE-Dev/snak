@@ -23,7 +23,7 @@ var actions = new Actions(config);
 
   program
   .version('0.0.1')
-  .description('Hive Smart Chain Deployment Suite');
+  .description('hsc-helper-cli - Hive Smart Chain (HSC) Deployment Suite');
 
   program
   .command('init')
@@ -42,7 +42,7 @@ var actions = new Actions(config);
   .command('migrate [accountname] ')
   .option('-f, --force', 'forcely migrate the contracts')
   .alias('mgt')
-  .description('\ndeploy contract on the Burrow\
+  .description('\ndeploy contract on the HSC\
   \nyou need to initialize a project before using this command.\n\n')
   .action((accountname,cmd) => actions.migrate(accountname,cmd.force));
 
@@ -122,23 +122,23 @@ var actions = new Actions(config);
   .action((count) => actions.randomTransact(count));
 
   program
-  .command('install_burrow')
+  .command('install_node')
   .alias('insl')
-  .description('\ninstall burrow blockchain, and copy the files to the home directory (.burrow), \
+  .description('\ninstall HSC Node and the side chain, and copy the files to the home directory (.burrow), \
   \nNo need to initialize project for this command.\n\n')
   .action(() => actions.installBurrow());
 
   program
-  .command('uninstall_burrow')
+  .command('uninstall_node')
   .alias('unsl')
-  .description('\nuninstall burrow blockchain, and back up the files to the home directory (burrow-backup), \
+  .description('\nuninstall HSC Node and the side chain, and back up the files to the home directory (burrow-backup), \
   \nNo need to initialize project for this command.\n\n')
   .action(() => actions.uninstallBurrow());
 
   program
-  .command('run_burrow')
+  .command('start')
   .alias('rnbrw')
-  .description('\nrun burrow blockchain,you need install burrow first!, \
+  .description('\nrun HSC side chain, you need install burrow first!, \
   \nNo need to initialize project for this command.\n\n')
   .action(() => actions.burrow());
 
@@ -146,14 +146,14 @@ var actions = new Actions(config);
   .command('*')
   .action(function(others){
     console.log('[Error] There isn\'t any command for "%s" \n\
-    please type snack -h for more helps.\n', others);
+    please type hsc-helper-cli -h for more helps.\n', others);
   });
 
   program
   .command('call <contract_name> <function_name> [parameters_list]')
   .alias('calf')
   .description("\nCalls the function of specefic contract, you need to pass the list of parameters like this var1,var2,...,varK ,comma separated, \
-  \nYou need to initialize a project before using this command.\n\n")
+  \n!!! You NEED to initialize a project before using this command !!!\n\n")
   .action((contract_name,function_name,parameters_list) => actions.callFunction(contract_name,function_name,parameters_list));
 
   program
@@ -174,42 +174,42 @@ var actions = new Actions(config);
   .command('chain_id')
   .alias('chid')
   .description("\nGet chain id of the blockchain\
-  \nYou need to initialize a project before using this command.\n\n")
+  \n!!! You NEED to initialize a project before using this command !!!\n\n")
   .action(() => actions.getChainId());
 
   program
   .command('genesis_hash')
   .alias('genhash')
   .description("\nGet Genesis Hash of the blockchain\
-  \nYou need to initialize a project before using this command.\n\n")
+  \n!!! You NEED to initialize a project before using this command !!!\n\n")
   .action(() => actions.getGenesisHash());
 
   program
   .command('latest_block_height')
   .alias('lbckh')
   .description("\nGet Latest Block Hash of the blockchain\
-  \nYou need to initialize a project before using this command.\n\n")
+  \n!!! You NEED to initialize a project before using this command !!!\n\n")
   .action(() => actions.getLatestBlockHeight());
 
   program
   .command('info')
   .alias('inf')
   .description("\nGet Info of the blockchain\
-  \nYou need to initialize a project before using this command.\n\n")
+  \n!!! You NEED to initialize a project before using this command !!!\n\n")
   .action(() => actions.getInfo());
 
   program
   .command('latest_block')
   .alias('lblck')
   .description("\nGet Latest Block of the blockchain\
-  \nYou may need to initialize a project before using this command.\n\n")
+  \n!!! You may need to initialize a project before using this command !!!\n\n")
   .action(() => actions.getLatestBlock());
 
   program
   .command('block  <block_height>')
   .alias('blck')
   .description("\nGet the specific Block of the blockchain\
-  \nYou may need to initialize a project before using this command.\n\n")
+  \n!!! You may need to initialize a project before using this command !!!\n\n")
   .action((block_height) => actions.getBlock(parseInt(block_height)));
 
   program
@@ -217,8 +217,7 @@ var actions = new Actions(config);
   .alias('conf')
   .description("\nGet the current config of the snak\
   \nIf you haven't created any project burrow url will be http://127.0.0.1:1337/rpc by default\
-  \nYou may need to initialize a project before using this command.\n\n")
+  \n!!! You may need to initialize a project before using this command !!!\n\n")
   .action(() => actions.getConfig());
-
 
 program.parse(process.argv);
