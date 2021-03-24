@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'Tryin to run burrow....'
+echo 'Tryin to run Hive Smart Chain (HSC)....'
 function isRunning {
     local epid=1
     while [ ! -z "$epid" ];do
@@ -12,9 +12,9 @@ function isRunning {
     done
 }
 
-isRunning burrow
+isRunning hsc-cli
 
-cd $HOME/burrow
+cd $HOME/hsc
 
 ./monax-keys server &
-./burrow start 
+./hsc-cli start

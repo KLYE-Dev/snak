@@ -1,5 +1,5 @@
 {
 	"config_name":"config.json",
-	"hsc_url":"http://127.0.0.1:26658",
+	"hsc_url":"http://127.0.0.1:26658/",
 	"hsc_path":"$HOME/hsc"
 }

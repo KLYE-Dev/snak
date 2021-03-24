@@ -9,12 +9,12 @@ const GOLANG_NULL  = "<nil>";
 
 module.exports = class CallTx extends Transaction {
 
-    constructor(connectionURL) {   
+    constructor(connectionURL) {
         super(connectionURL);
     }
 
     broadcast(privKey,address,gasLimit,fee,data){
-        
+
         let account  = this.generateAccount(privKey);
         let accounts = new Accounts(this.connectionUrl);
         let _this    = this;
@@ -22,23 +22,23 @@ module.exports = class CallTx extends Transaction {
 
         if(address != null && address != ""){
             toAddress = address;
-        }    
+        }
 
-        return accounts.getSequence(account.address).then(sequence => {            
+        return accounts.getSequence(account.address).then(sequence => {
             let blockchain = new Blockchain(_this.connectionUrl);
             return blockchain.getChainId().then(chainId => {
                 let callSign = {
                     chain_id:chainId,
                     tx: [
                     CALL_TX_TYPE,
-                    {        
+                    {
                         address:toAddress,
                         data:data,
-                        fee:fee,  
+                        fee:fee,
                         gas_limit:gasLimit,
-                                                  
+
                         input:
-                        { 
+                        {
                             address:account.address,//source address
                             amount:fee,
                             sequence:sequence + 1,// sequence of the source account
@@ -46,19 +46,19 @@ module.exports = class CallTx extends Transaction {
                     }
                   ]
                 };
-                
+
                 let signature = _this.sign(account.privKey,JSON.stringify(callSign));
-                        
+
                 let callTx = [
                     CALL_TX_TYPE,
-                    {                                
-                        address: (toAddress === GOLANG_NULL) ? null : toAddress , 
+                    {
+                        address: (toAddress === GOLANG_NULL) ? null : toAddress ,
                         data:data,
-                        fee:fee,  
+                        fee:fee,
                         gas_limit:gasLimit,
 
                         input:
-                        { 
+                        {
                             address:account.address,
                             amount:fee,
                             sequence:sequence + 1,
@@ -69,18 +69,18 @@ module.exports = class CallTx extends Transaction {
                     }
                 ];
 
-                return _this.broadcastTx(callTx).then(data => {                    
+                return _this.broadcastTx(callTx).then(data => {
                     return data;
 
-                }).catch(ex => {                                
-                    throw ex;                             
+                }).catch(ex => {
+                    throw ex;
                 });
 
-            }).catch(ex => {                               
-                throw ex;                                 
+            }).catch(ex => {
+                throw ex;
             });
 
-        }).catch(ex => {                              
+        }).catch(ex => {
             throw ex;
         });
     }

@@ -20,16 +20,16 @@ module.exports = class Functions{
         var Project = require("./project");
         this.project = new Project;
     }
-    
+
     _getContractAddress(contract_name) {
         let deploy_obj = fs.readFileSync(schema.project_path + schema.migration + schema.migration_output + contract_name + ".json", "utf8");
-    
+
         if (deploy_obj)
             return deploy_obj.address;
         else
             return null;
     }
-    
+
     _getMigrateObj(contract_name, function_name) {
         let _this = this;
         return new promise(function (fulfil, reject) {
@@ -46,34 +46,34 @@ module.exports = class Functions{
                         }
                     }
                     reject(null);
-                }    
+                }
                 catch (ex) {
                     console.log(ex);
                 }
             }).catch(err=>{
                 console.log(err);
-    
+
             });
         });
     }
-    
-    
-    callFunction(burrow_URL, contract_name, function_name, input) {
-    
+
+
+    callFunction(hsc_URL, contract_name, function_name, input) {
+
         var _this = this;
         this._getMigrateObj(contract_name, function_name).then((migrate_object) => {
-    
+
             try {
                 let account_path = schema.project_path + schema.accounts + schema.default_account;
-                let contractManager = contracts.newContractManagerDev(burrow_URL, JSON.parse(fs.readFileSync(account_path, 'utf-8')));
+                let contractManager = contracts.newContractManagerDev(hsc_URL, JSON.parse(fs.readFileSync(account_path, 'utf-8')));
                 let ContractFactory = contractManager.newContractFactory(migrate_object.abi);
-    
+
                 ContractFactory.at(migrate_object.address, function (error, contract) {
                     if (error) {
                         throw error;
                     }
                     let contract_function = "contract." + function_name + "( " + input + ", methodCallBack " + " )";
-    
+
                     var Func =new Function ("contract", "methodCallBack",contract_function);
                     Func(contract,methodCallBack);
                 });
@@ -83,7 +83,7 @@ module.exports = class Functions{
             }
         }).catch(err=>{
             console.log(err);
-    
+
         });
     }
 }

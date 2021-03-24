@@ -7,34 +7,34 @@ const UNBOND_TX_TYPE = 0x12;
 
  module.exports = class UnbondlTx extends Transaction {
 
-    constructor(connectionURL) {   
+    constructor(connectionURL) {
       super(connectionURL);
     }
 
-  
+
     broadcast(privKey,address,amount,fee){
 
     let account  = this.generateAccount(privKey);
     let accounts = new Accounts(this.connectionUrl);
     let _this    = this;
 
-    return accounts.getSequence(account.address).then(sequence => {            
+    return accounts.getSequence(account.address).then(sequence => {
         let blockchain = new Blockchain(_this.connectionUrl);
-        
+
         return blockchain.getChainId().then(chainId => {
             let unbondSign = {
                 chain_id:chainId,
                 tx: [
                 UNBOND_TX_TYPE,
                 {
-                    from:                    
-                    { 
+                    from:
+                    {
                         address:account.address,
                         amount:amount,
                         sequence:sequence + 2,
                     },
 
-                    to:                    
+                    to:
                     {
                         address:address,
                         amount:amount
@@ -42,14 +42,14 @@ const UNBOND_TX_TYPE = 0x12;
                 }
                 ]
             };
-            
+
             let signature = _this.sign(account.privKey,JSON.stringify(unbondSign));
-                    
+
             let unbondTx = [
                 UNBOND_TX_TYPE,
                 {
-                    from:                    
-                    { 
+                    from:
+                    {
                         address:account.address,
                         amount:amount,
                         sequence:sequence + 2,
@@ -57,7 +57,7 @@ const UNBOND_TX_TYPE = 0x12;
                         public_key:[1,account.pubKey]
                     },
 
-                    to:                    
+                    to:
                     {
                         address:address,
                         amount:amount
@@ -65,15 +65,15 @@ const UNBOND_TX_TYPE = 0x12;
                 }
             ];
 
-            return _this.broadcastTx(unbondTx).then(data => {                    
+            return _this.broadcastTx(unbondTx).then(data => {
                 return data;
 
             }).catch(ex => {
-                throw ex;                    
+                throw ex;
             });
 
         }).catch(ex => {
-            throw ex;             
+            throw ex;
         });
 
     }).catch(ex => {

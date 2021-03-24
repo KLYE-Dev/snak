@@ -23,7 +23,7 @@ var actions = new Actions(config);
 
   program
   .version('0.0.1')
-  .description('hsc-helper-cli - Hive Smart Chain (HSC) Deployment Suite');
+  .description('hsc-cli - Hive Smart Chain (HSC) Deployment Suite');
 
   program
   .command('init')
@@ -124,29 +124,29 @@ var actions = new Actions(config);
   program
   .command('install_node')
   .alias('insl')
-  .description('\ninstall HSC Node and the side chain, and copy the files to the home directory (.burrow), \
+  .description('\ninstall HSC Node and the side chain, and copy the files to the home directory (.hsc), \
   \nNo need to initialize project for this command.\n\n')
-  .action(() => actions.installBurrow());
+  .action(() => actions.installhsc-cli());
 
   program
   .command('uninstall_node')
   .alias('unsl')
-  .description('\nuninstall HSC Node and the side chain, and back up the files to the home directory (burrow-backup), \
+  .description('\nuninstall HSC Node and the side chain, and back up the files to the home directory (hsc-cli-backup), \
   \nNo need to initialize project for this command.\n\n')
-  .action(() => actions.uninstallBurrow());
+  .action(() => actions.uninstallHsc());
 
   program
   .command('start')
   .alias('rnbrw')
-  .description('\nrun HSC side chain, you need install burrow first!, \
+  .description('\nrun HSC side chain, you need install hsc-cli first!, \
   \nNo need to initialize project for this command.\n\n')
-  .action(() => actions.burrow());
+  .action(() => actions.hsc());
 
   program
   .command('*')
   .action(function(others){
     console.log('[Error] There isn\'t any command for "%s" \n\
-    please type hsc-helper-cli -h for more helps.\n', others);
+    please type hsc-cli -h for more helps.\n', others);
   });
 
   program
@@ -215,8 +215,8 @@ var actions = new Actions(config);
   program
   .command('config')
   .alias('conf')
-  .description("\nGet the current config of the snak\
-  \nIf you haven't created any project burrow url will be http://127.0.0.1:1337/rpc by default\
+  .description("\nGet the current config of the hsc-cli\
+  \nIf you haven't created any project hsc-cli url will be http://127.0.0.1:1337/rpc by default\
   \n!!! You may need to initialize a project before using this command !!!\n\n")
   .action(() => actions.getConfig());
 

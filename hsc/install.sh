@@ -1,17 +1,17 @@
 #!/bin/bash
-#this script will install burrow and their requirments for you
+#this script will install hsc-cli and their requirments for you
 
-BURRUW_INSTALL_FILES_DIR=($HOME/burrow)
-BURRUW_OLD_FILES=($HOME/burrow-backup)
+BURRUW_INSTALL_FILES_DIR=($HOME/hsc)
+BURRUW_OLD_FILES=($HOME/hsc-backup)
 BURRUW_FILES_DIR=$1
 
 
 
 echo 
-echo copying burrow files....
+echo copying hsc-cli files....
 
 ##########################################################################
-# we create a folder named burrow-backup and put the burrow old files in it
+# we create a folder named hsc-cli-backup and put the hsc-cli old files in it
 # if already existed
 if [ -d "$BURRUW_INSTALL_FILES_DIR" ]; then
 
@@ -27,7 +27,7 @@ if [ -d "$BURRUW_INSTALL_FILES_DIR" ]; then
     rm -r $BURRUW_INSTALL_FILES_DIR
 fi
 
-# copying burrow's stuffs
+# copying hsc-cli's stuffs
 mkdir $BURRUW_INSTALL_FILES_DIR
 cp -r $BURRUW_FILES_DIR/* $BURRUW_INSTALL_FILES_DIR/
 

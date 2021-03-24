@@ -1,16 +1,16 @@
 {
-  "_from": "snak",
-  "_id": "snak@0.1.1",
+  "_from": "hsc-cli",
+  "_id": "hsc-cli@0.0.1",
   "_inBundle": false,
   "_integrity": "sha512-+QmCE0wxkPE8JutCGLCx9zx41W4KzMdc09oI40rPrdB5Am/7EVupmW/C5B3w8cOYYZsoLbhD+bzCsRou9uTu6Q==",
-  "_location": "/snak",
+  "_location": "/hsc-cli",
   "_phantomChildren": {},
   "_requested": {
     "type": "tag",
     "registry": true,
-    "raw": "snak",
-    "name": "snak",
-    "escapedName": "snak",
+    "raw": "hsc-cli",
+    "name": "hsc-cli",
+    "escapedName": "hsc-cli",
     "rawSpec": "",
     "saveSpec": null,
     "fetchSpec": "latest"
@@ -18,25 +18,28 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/snak/-/snak-0.1.1.tgz",
+  "_resolved": "https://registry.npmjs.org/hsc-cli/-/hsc-cli-0.0.1.tgz",
   "_shasum": "8a65edc1c5a04c2b3cbb3b68440b8e675649ec62",
-  "_spec": "snak",
-  "_where": "C:\\Users\\KLYE\\Projects\\HSC-DEV",
+  "_spec": "hsc-cli",
+  "_where": "C:\\Users\\KLYE\\Projects\\hsc-cli",
   "author": {
-    "name": "Ahmad Pouladzadeh",
-    "email": "pouladzade@gmail.com"
+    "name": "KLYE",
+    "email": "peakd.com/@klye"
   },
   "bin": {
-    "snak": "index.js"
+    "hsc-cli": "index.js"
   },
   "bugs": {
     "url": "https://github.com/pouladzade/snack/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
-    "burrow-contracts": "0.18.1",
+    "@openzeppelin/contracts": "^4.0.0",
+    "@truffle/compile-solidity": "^5.2.3",
+    "burrow-contracts": "^0.18.1",
     "burrow-db": "0.18.1",
     "commander": "^2.9.0",
+    "grpc": "^1.24.6",
     "md5": "2.2.1",
     "promise": "8.0.1",
     "shelljs": "0.8.1",
@@ -46,11 +49,11 @@
     "truffle-resolver": "4.0.1"
   },
   "deprecated": false,
-  "description": "Tooling for interacting with Hyperledger Burrow",
+  "description": "Tooling for interacting with Hive Smart Chain (HSC)",
   "homepage": "https://github.com/pouladzade/snack#readme",
   "license": "MIT",
   "main": "index.js",
-  "name": "snak",
+  "name": "hsc-cli",
   "preferGlobal": true,
   "repository": {
     "type": "git",

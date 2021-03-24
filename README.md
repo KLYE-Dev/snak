@@ -4,13 +4,13 @@
 Updated for Hive Smart Chain (HSC) v0.18.0
 This document has inspired by truffle README.md
 
-hsc-helper-cli is a node.js app which already is under development, aiming to facilitate working with Hive Smart Chain (HSC) without using Monax.
+hsc-cli is a node.js app which already is under development, aiming to facilitate working with Hive Smart Chain (HSC) without using Monax.
 
-### with hsc-helper-cli you will have these facilities:
+### with hsc-cli you will have these facilities:
 
 * Easily install and uninstall Hive Smart Chain (HSC).
 * Built-in smart contract compilation, linking, deployment.
-* Having interaction with blockchain(Burrow) directly via linux terminal.
+* Having interaction with blockchain(hsc-cli) directly via linux terminal.
 * Automated contract testing with Mocha and Chai(will be added in future).
 * Network management for deploying to many public & private networks.
 * Interactive console for direct contract communication(will be added in future).
@@ -18,46 +18,46 @@ hsc-helper-cli is a node.js app which already is under development, aiming to fa
 ### Install
 
 ```
-$ npm install -g hsc-helper-cli
+$ npm install -g hsc-cli
 ```
 
 ### Quick Usage
 ```
-Install Burrow
+Install hsc-cli
 (for now only Ubuntu 16.04 amd64 and Darwin are supported)
-will copy Burrow necessary files in the '$HOME/burrow'
+will copy hsc-cli necessary files in the '$HOME/hsc'
 
-$ hsc-helper-cli install_node
-This command will install Hive Smart Chain (HSC) on the $/HOME/burrow and by default use the http://localhost:1337/rpc.
+$ hsc-cli install_node
+This command will install Hive Smart Chain (HSC) on the $/HOME/hsc and by default use the http://localhost:1337/rpc.
 You can find a predefined accounts on this directory.
 ```
 ```
-Uninstall Burrow
-This command will delete the '$HOME/burrow'
+Uninstall hsc-cli
+This command will delete the '$HOME/hsc'
 
- $ hsc-helper-cli uninstall_node
+ $ hsc-cli uninstall_node
 
 ```
 ```
-Run Burrow
+Run hsc-cli
 
- $ hsc-helper-cli start
- This command at first run the Monax_keys on the default port and then will run the Burrow.
- Please be sure that before running Burrow, import the keys  which already are located in the burrow installation directory.
- $ hsc-helper-cli import_keys $HOME/burrow/account_list.json
+ $ hsc-cli start
+ This command at first run the Monax_keys on the default port and then will run the hsc_cli.
+ Please be sure that before running hsc-cli, import the keys  which already are located in the hsc-cli installation directory.
+ $ hsc-cli import_keys $HOME/hsc/account_list.json
 
 ```
 
 ```
 Send random transaction
-$ hsc-helper-cli rtx <count>
+$ hsc-cli rtx <count>
 
 This command uses the pre-defined acounts to send the random amount transactions between these accounts!
 ```
 ```
 Send transaction
 
-$ hsc-helper-cli send <priv_key> <address> <fee>
+$ hsc-cli send <priv_key> <address> <fee>
 
 ```
 
@@ -66,32 +66,32 @@ For a default set of contracts and tests, run the following within an empty proj
 ```
 Initialize project:
 
-$ hsc-helper-cli init
+$ hsc-cli init
 ```
 
-From there, you can run `hsc-helper-cli compile`, `hsc-helper-cli migrate` and `hsc-helper-cli test`(will be implemented in future) to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
+From there, you can run `hsc-cli compile`, `hsc-cli migrate` and `hsc-cli test`(will be implemented in future) to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
 
 ```
 Compile smart contracts:
 
-$ hsc-helper-cli compile
+$ hsc-cli compile
 
 it will compile all the contracts which are already inside the contract folder and makes the Bytecodes and ABIs and put them in the build directory.
 ```
 ```
 Deploy smart contracts:
 
-$ hsc-helper-cli migrate [accountname]
+$ hsc-cli migrate [accountname]
 
 [accountname] is optional, if you do not want to use default account you can save your account in a standard account json file in the accounts folder and name it 'account.json'.
 
 ```
-Be sure you launch the Burrow using `$hsc-helper-cli run_burrow` and put all contracts on the contract folder before running these commands.
+Be sure you launch the hsc-cli using `$hsc-cli run_hsc-cli` and put all contracts on the contract folder before running these commands.
 
 ```
 Call smart contract's functions:
 
-$ hsc-helper-cli call <contract_name> <function_name> <parameters_list>
+$ hsc-cli call <contract_name> <function_name> <parameters_list>
 
 The parameters are pretty clear the only thing you need to care is parameters_list, its formar must be like this:   var1,var2,...,varK (comma separated)
 
@@ -115,7 +115,7 @@ The parameters are pretty clear the only thing you need to care is parameters_li
 
 
     migrate|mgt [accountname]                                    
-    deploy contract on the Burrow  
+    deploy contract on the hsc-cli  
     you need to initialize a project before using this command.
 
 
@@ -155,18 +155,18 @@ The parameters are pretty clear the only thing you need to care is parameters_li
     you should put a list of accounts(name = account_list.json) in accounts folder first!.
 
 
-    install_burrow|insl                                          
-    install burrow blockchain, and copy the files to the home directory (.burrow),   
+    install_hsc-cli|insl                                          
+    install hsc-cli blockchain, and copy the files to the home directory (.hsc),   
     No need to initialize project for this command.
 
 
-    uninstall_burrow|unsl                                        
-    uninstall burrow blockchain, and back up the files to the home directory (burrow-backup),   
+    uninstall_hsc-cli|unsl                                        
+    uninstall hsc-cli blockchain, and back up the files to the home directory (hsc-cli-backup),   
     No need to initialize project for this command.
 
 
-    run_burrow|rnbrw                                             
-    run burrow blockchain,you need install burrow first!,   
+    run_hsc-cli|rnbrw                                             
+    run hsc-cli blockchain,you need install hsc-cli first!,   
     No need to initialize project for this command.
 
 
@@ -212,8 +212,8 @@ The parameters are pretty clear the only thing you need to care is parameters_li
 
 
     config|conf                                                  
-    Get the current config of the hsc-helper-cli  
-    If you haven't created any project burrow url will be http://127.0.0.1:1337/rpc by default  
+    Get the current config of the hsc-cli  
+    If you haven't created any project hsc-cli url will be http://127.0.0.1:1337/rpc by default  
     You may need to initialize a project before using this command.
 ```
 
@@ -249,14 +249,14 @@ contract Calculator {
 
 ```
 ```
-ahmad@blockchain:~/projects/calculator$ hsc-helper-cli compile
+ahmad@blockchain:~/projects/calculator$ hsc-cli compile
 
 [ '/home/ahmad/projects/calculator/contracts/Calculator.sol' ]
 Compiling ./contracts/Calculator.sol...
 Compile finished successfully!!!
 Artifacts have been created successfully!!!
 
-ahmad@blockchain:~/projects/calculator$ hsc-helper-cli migrate
+ahmad@blockchain:~/projects/calculator$ hsc-cli migrate
 
 1)Calculator  :  
 
@@ -273,7 +273,7 @@ Address : 28F6FCF5278157FF68476E9E165B6FDA406A4E10
 
 Calculator has been successfully deployed!
 
-ahmad@blockchain:~/projects/calculator$ hsc-helper-cli call Calculator Mul 12,10
+ahmad@blockchain:~/projects/calculator$ hsc-cli call Calculator Mul 12,10
 "120"
 
 ```

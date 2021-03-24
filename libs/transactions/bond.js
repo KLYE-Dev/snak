@@ -7,19 +7,19 @@ const BOND_TX_TYPE  = 0x11;
 
 module.exports = class BondTx extends Transaction {
 
-    constructor(connectionURL) {   
+    constructor(connectionURL) {
         super(connectionURL);
     }
-  
+
     broadcast(privKey,address,amount,fee,pubKey){
 
         let account  = this.generateAccount(privKey);
         let accounts = new Accounts(this.connectionUrl);
         let _this    = this;
 
-        return accounts.getSequence(account.address).then(sequence => {            
+        return accounts.getSequence(account.address).then(sequence => {
             let blockchain = new Blockchain(_this.connectionUrl);
-            
+
             return blockchain.getChainId().then(chainId => {
                 let formatedPubKey = "{{PubKeyEd25519{"+ pubKey+'}}}';
                 let bondSign = {
@@ -27,14 +27,14 @@ module.exports = class BondTx extends Transaction {
                     tx: [
                     BOND_TX_TYPE,
                     {
-                        from:                    
-                        { 
+                        from:
+                        {
                             address:account.address,
                             amount:amount,
                             sequence:sequence + 1,
                         },
 
-                        to:                    
+                        to:
                         {
                             address:address,
                             amount:amount
@@ -44,14 +44,14 @@ module.exports = class BondTx extends Transaction {
                     }
                     ]
                 };
-                
+
                 let signature = _this.sign(account.privKey,JSON.stringify(bondSign));
-                        
+
                 let bondTx = [
                     BOND_TX_TYPE,
                     {
-                        from:                    
-                        { 
+                        from:
+                        {
                             address:account.address,
                             amount:amount,
                             sequence:sequence + 1,
@@ -59,26 +59,26 @@ module.exports = class BondTx extends Transaction {
                             public_key:[1,account.pubKey]
                         },
 
-                        to:                    
+                        to:
                         {
                             address:address,
                             amount:amount
                         },
-                        
-                        pubKey:[1,pubKey]   
-                                        
+
+                        pubKey:[1,pubKey]
+
                     }
                 ];
 
-                return _this.broadcastTx(bondTx).then(data => {                    
+                return _this.broadcastTx(bondTx).then(data => {
                     return data;
 
                 }).catch(ex => {
-                    throw ex;                    
+                    throw ex;
                 });
 
             }).catch(ex => {
-                throw ex;             
+                throw ex;
             });
 
         }).catch(ex => {

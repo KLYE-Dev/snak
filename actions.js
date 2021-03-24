@@ -12,8 +12,8 @@ module.exports = class Action {
         if(config == undefined){
             this._Config = {
                 config_name:"config.json",
-                burrow_url:"http://localhost:10997/rpc",
-                burrow_path:"$HOME/burrow"
+                hsc_url:"206.45.142.209:26658",
+                hsc_path:"$HOME/hsc"
             }
         }
         else{
@@ -38,7 +38,7 @@ module.exports = class Action {
         }
         else{
             let Unsafe = require("./libs/transactions/unsafe");
-            this._unsafeTx = new Unsafe(this._Config.burrow_url);
+            this._unsafeTx = new Unsafe(this._Config.hsc_url);
             return this._unsafeTx;
         }
     }
@@ -49,7 +49,7 @@ module.exports = class Action {
         }
         else{
             let SendTx = require("./libs/transactions/send");
-            this._sendTx = new SendTx(this._Config.burrow_url);
+            this._sendTx = new SendTx(this._Config.hsc_url);
             return this._sendTx;
         }
     }
@@ -60,7 +60,7 @@ module.exports = class Action {
         }
         else{
             let CallTx = require("./libs/transactions/call");
-            this._callTx = new CallTx(this._Config.burrow_url);
+            this._callTx = new CallTx(this._Config.hsc_url);
             return this._callTx;
         }
     }
@@ -71,7 +71,7 @@ module.exports = class Action {
         }
         else{
             let BondTx = require("./libs/transactions/bond");
-            this._bondTx = new BondTx(this._Config.burrow_url);
+            this._bondTx = new BondTx(this._Config.hsc_url);
             return this._bondTx;
         }
     }
@@ -82,7 +82,7 @@ module.exports = class Action {
         }
         else{
             let UnbondTx = require("./libs/transactions/unbond");
-            this._unbondTx = new UnbondTx(this._Config.burrow_url);
+            this._unbondTx = new UnbondTx(this._Config.hsc_url);
             return this._unbondTx;
         }
     }
@@ -93,7 +93,7 @@ module.exports = class Action {
         }
         else{
             let Accounts = require("./libs/accounts") ;
-            this._accounts = new Accounts(this._Config.burrow_url);
+            this._accounts = new Accounts(this._Config.hsc_url);
             return this._accounts;
         }
     }
@@ -126,7 +126,7 @@ module.exports = class Action {
         }
         else{
             let Blockchain = require("./libs/blockchain");
-            this._blockchain = new Blockchain(this._Config.burrow_url);
+            this._blockchain = new Blockchain(this._Config.hsc_url);
             return this._blockchain;
         }
     }
@@ -137,7 +137,7 @@ module.exports = class Action {
         }
         else{
             let Deploy  = require("./libs/deploy");
-            this.deploy = new Deploy(this._Config.burrow_url);
+            this.deploy = new Deploy(this._Config.hsc_url);
             return this.deploy;
         }
     }
@@ -292,9 +292,9 @@ module.exports = class Action {
 
     getBalance(address,cmd){
         console.log(cmd);
-        this._accountHandler().getBalance( address)
+        this._accountHandler().getBalance(address)
         .then(balance => {
-            logger.console("Balance : " + balance);
+            logger.console("Balance : " + JSON.stringify(balance));
         })
         .catch(function(ex) {
             logger.error(ex);
@@ -320,10 +320,10 @@ module.exports = class Action {
         }
     }
 
-    burrow(){
+    hsc(){
         try{
             let shell = require('shelljs');
-            let cmd = __dirname + '/burrow/burrow.sh';
+            let cmd = __dirname + '/hsc/hsc.sh';
             let child = shell.exec(cmd, {async:true});
             child.stdout.on('data', function(data) {
             });
@@ -334,21 +334,21 @@ module.exports = class Action {
         }
     }
 
-    installBurrow(){
+    installHsc(){
 
-        let burrow_files = "";
+        let hsc_files = "";
 
         if(os.type() === "Linux")
-            burrow_files = '/burrow/burrow-linux';
+            hsc_files = '/hsc/hsc-linux';
         else if (os.type() === "Darwin")
-            burrow_files = '/burrow/burrow-darwin';
+            hsc_files = '/hsc/hsc-darwin';
         else{
-            logger.console("snak does not support your OS type: " + os.type());
+            logger.console("hsc-cli does not support your OS type: " + os.type());
             return;
         }
         try{
             let shell = require('shelljs');
-            let cmd = __dirname + '/burrow/install.sh ' + __dirname + burrow_files;
+            let cmd = __dirname + '/hsc/install.sh ' + __dirname + hsc_files;
             let child = shell.exec(cmd, {async:true});
             child.stdout.on('data', function(data) {
             });
@@ -359,10 +359,10 @@ module.exports = class Action {
         }
     }
 
-    uninstallBurrow(){
+    uninstallHsc(){
         try{
             let shell = require('shelljs');
-            let cmd = __dirname + '/burrow/uninstall.sh';
+            let cmd = __dirname + '/hsc/uninstall.sh';
             let child = shell.exec(cmd, {async:true});
             child.stdout.on('data', function(data) {
             });
@@ -376,7 +376,7 @@ module.exports = class Action {
     callFunction(contract_name,function_name,parameters_list){
 
         try{
-            this._functionHandler().callFunction(this._Config.burrow_url,contract_name,function_name,parameters_list);
+            this._functionHandler().callFunction(this._Config.hsc_url,contract_name,function_name,parameters_list);
         }
         catch(ex){
             logger.error(ex);
@@ -385,23 +385,23 @@ module.exports = class Action {
 
     runMonaxKeys(ip_address){
 
-        let burrow_files = "";
+        let hsc_files = "";
 
         if(os.type() === "Linux")
-            burrow_files = '/burrow/burrow-linux';
+            hsc_files = '/hsc/hsc-linux';
         else if (os.type() === "Darwin")
-            burrow_files = '/burrow/burrow-darwin';
+            hsc_files = '/hsc/hsc-darwin';
         else{
-            logger.console("snak does not support your OS type: " + os.type());
+            logger.console("hsc-cli does not support your OS type: " + os.type());
             return;
         }
         try{
             let shell = require('shelljs');
             let cmd = "";
             if(ip_address == "")
-                cmd = __dirname + burrow_files + '/monax-keys server &';
+                cmd = __dirname + hsc_files + '/monax-keys server &';
             else
-                cmd = __dirname + burrow_files + '/monax-keys --host ' + ip_address + ' server &';
+                cmd = __dirname + hsc_files + '/monax-keys --host ' + ip_address + ' server &';
 
             let child = shell.exec(cmd, {async:true});
             child.stdout.on('data', function(data) {
@@ -416,7 +416,7 @@ module.exports = class Action {
     getChainId(){
         return this._blockchainHandler().getChainId()
         .then(chainId => {
-            logger.console("Chain ID :\n" + JSON.stringify(chainId,null,4));
+            logger.console("Hive Side Chain ID :\n" + JSON.stringify(chainId,null,4));
         })
         .catch(ex => {
             logger.error(ex);
@@ -436,7 +436,7 @@ module.exports = class Action {
     getInfo(){
         return this._blockchainHandler().getInfo()
         .then(info => {
-            logger.console("info block :\n" +  JSON.stringify(info,null,4));
+            logger.console("Hive Side Chain Info:\n" +  JSON.stringify(info,null,4));
         })
         .catch(ex => {
             logger.error(ex);
@@ -446,7 +446,7 @@ module.exports = class Action {
     getLatestBlock(){
         return this._blockchainHandler().getLatestBlock()
         .then(block => {
-            logger.console("Latest block :\n" + JSON.stringify(block,null,4));
+            logger.console("Latest Hive Side Chain Block :\n" + JSON.stringify(block,null,4));
         })
         .catch(ex => {
             logger.error(ex);
@@ -456,7 +456,7 @@ module.exports = class Action {
     getLatestBlockHeight(){
         return this._blockchainHandler().getLatestBlockHeight()
         .then(latestBlockHeight => {
-            logger.console("Ltest block height :" + latestBlockHeight);
+            logger.console("Latest Hive Side Chain Height : #" + latestBlockHeight);
         })
         .catch(ex => {
             logger.error(ex);
@@ -466,7 +466,7 @@ module.exports = class Action {
     getBlock(height){
         return this._blockchainHandler().getBlock(height)
         .then(block => {
-            logger.console("block :\n" + JSON.stringify(block,null,4));
+            logger.console("Get Block :\n" + JSON.stringify(block,null,4));
         })
         .catch(ex => {
             logger.error(ex);
@@ -475,14 +475,14 @@ module.exports = class Action {
 
     importKeys(file_name){
 
-        let burrow_files = "";
+        let hsc_files = "";
 
         if(os.type() == "Linux")
-            burrow_files = '/burrow/burrow-linux';
+            hsc_files = '/hsc/hsc-linux';
         else if (os.type() == "Darwin")
-            burrow_files = '/burrow/burrow-darwin';
+            hsc_files = '/hsc/hsc-darwin';
         else{
-            logger.error("snak does not support your OS type: " + os.type());
+            logger.error("hsc-cli does not support your OS type: " + os.type());
             return;
         }
 
@@ -493,7 +493,7 @@ module.exports = class Action {
 
                 try{
                     let shell = require('shelljs');
-                    let cmd = __dirname + burrow_files + '/monax-keys import ' + element.privKey + ' --no-pass';
+                    let cmd = __dirname + hsc_files + '/monax-keys import ' + element.privKey + ' --no-pass';
                     let child = shell.exec(cmd, {async:true});
                     child.stdout.on('data', function(data) {
                     });

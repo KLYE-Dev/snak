@@ -1,0 +1,16 @@
+{
+  "SendTx": {
+    "Inputs": [
+      {
+        "Address": "0EAFE809AA10D24E31E362C20BED09C884BDE336",
+        "Amount": 10
+      }
+    ],
+    "Outputs": [
+      {
+        "Address": "02A09A2D6DE844519D1EBF2A832E0019371A8848",
+        "Amount": 10
+      }
+    ]
+  }
+}

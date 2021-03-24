@@ -1,9 +1,9 @@
 
 var fs      = require("fs");
 var path    = require("path");
-var compile = require("truffle-compile");
+var compile = require("@truffle");
 var schema  = require("./schema").Schema;
-var Resolve = require("truffle-resolver");
+var Resolve = require("@truffle");
 var Project = require('./project');
 
 var project = new Project;
@@ -29,9 +29,9 @@ let compileOptions = {
  module.exports = class Compile {
 
     constructor(){
-        
+
     }
-    
+
     static _callb(error,data){
         if(error){
             console.log("Error : Compile failed!");
@@ -39,7 +39,7 @@ let compileOptions = {
         }
         else{
             console.log("Compile finished successfully!!!");
-            
+
             var contracts;
             project.getContractsNames().then(function(contracts){
                 if(Compile._saveArtifacts(contracts, data))
@@ -49,22 +49,22 @@ let compileOptions = {
             }).catch(err=>{
                 console.log(err);
 
-            });       
-        }         
+            });
+        }
     }
-    
+
     static _saveArtifacts (contracts,data){
         for(var i = 0 ; i < contracts.length ; i++) {
             try{
                 var strData = JSON.stringify(data[contracts[i]],null,4);
                 if(!strData){
-                        console.log("can not find the contract with this name : " + contracts[i] + "\n Please check the contract name again!");                    
+                        console.log("can not find the contract with this name : " + contracts[i] + "\n Please check the contract name again!");
                 }
                 var strFullName = compileOptions.contracts_build_directory;
                 if (!fs.existsSync(strFullName)) {
                     fs.mkdirSync(strFullName);
                 }
-                strFullName += "/" + contracts[i] + ".json";                       
+                strFullName += "/" + contracts[i] + ".json";
                 var file = fs.createWriteStream(strFullName, {flags : 'w'});
                 file.write(strData,'utf-8');
             }
@@ -75,18 +75,18 @@ let compileOptions = {
         }
         return true;
     }
-    
+
     compileAll(){
-        try{            
+        try{
             project.listContracts()
             .then(function(files){
                 console.log(files);
                 var map = {};
                 for(var i=0; i< files.length ; i++){
-                    var source = fs.readFileSync(path.join(files[i]), "utf-8");                    
+                    var source = fs.readFileSync(path.join(files[i]), "utf-8");
                     map[files[i]] = source;
                 }
-                compile.all(compileOptions,Compile._callb);                                            
+                compile.all(compileOptions,Compile._callb);
                 })
             .catch((err)=>{
                     console.log(err);
@@ -96,5 +96,5 @@ let compileOptions = {
             console.log(ex);
         }
     }
-        
+
  }

@@ -1,7 +1,7 @@
 validatoraddress = "288289F4ACBEDF350CCC844EB847295125F742BB"
 [GenesisDoc]
   GenesisTime = 2018-05-08T09:26:05Z
-  ChainName = "BurrowChain_2A0FC2"
+  ChainName = "hsc-cliChain_2A0FC2"
   [GenesisDoc.GlobalPermissions]
     Roles = []
     [GenesisDoc.GlobalPermissions.Base]
@@ -607,7 +607,7 @@ validatoraddress = "288289F4ACBEDF350CCC844EB847295125F742BB"
   Seeds = ""
   ListenAddress = "tcp://0.0.0.0:46656"
   Moniker = ""
-  TendermintRoot = ".burrow"
+  TendermintRoot = ".hsc"
 
 [Keys]
   URL = "http://localhost:4767"

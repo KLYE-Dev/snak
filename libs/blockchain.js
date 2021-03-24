@@ -7,87 +7,87 @@ var blockChain;
 module.exports = class Blockchain{
 
     constructor(connectionUrl){
-        
-        let burrow = burrowDbFactory.createInstance(connectionUrl);
-        blockChain = burrow.blockchain();
+
+        let hsc_cli = burrowDbFactory.createInstance(connectionUrl);
+        blockChain = hsc_cli.blockchain();
     }
 
     getGenesisHash(){
-        
+
         return new Promise(function (resolve, reject) {
-            blockChain.getChainId((error,data)=>{
-                if(data){                                               
+            blockChain.genesisHash((error,data)=>{
+                if(data){
                     resolve(data.GenesisHash);
-                }    
+                }
                 else{
-                    reject(error);   
-                } 
+                    reject(error);
+                }
             })
         });
     }
 
-    getChainId(){        
+    getChainId(){
         return new Promise(function (resolve, reject) {
             blockChain.getChainId((error,data)=>{
-                if(data){                                               
+                if(data){
                     resolve(data.ChainId);
-                }    
+                }
                 else{
-                    reject(error);   
-                } 
+                    reject(error);
+                }
             })
         });
     }
-        
-    getInfo(){                
+
+    getInfo(){
         return new Promise(function (resolve, reject) {
             blockChain.getInfo((error,data)=>{
-                if(data){                                               
+                if(data){
                     resolve(data);
-                }    
+                }
                 else{
-                    reject(error);   
-                } 
+                    reject(error);
+                }
             })
         });
     }
-    
-    getLatestBlockHeight(){        
+
+    getLatestBlockHeight(){
         return new Promise(function (resolve, reject) {
             blockChain.getLatestBlock((error,data)=>{
-                if(data){                                               
+                if(data){
                     resolve(data.Block.header.height);
-                }    
+                }
                 else{
-                    reject(error);   
-                } 
+                    reject(error);
+                }
             })
         });
     }
-    
+
     getLatestBlock(){
         return new Promise(function (resolve, reject) {
             blockChain.getLatestBlock((error,data)=>{
-                if(data){                                               
+                if(data){
                     resolve(data);
-                }    
+                }
                 else{
-                    reject(error);   
-                } 
+                    reject(error);
+                }
             })
         });
-        
+
     }
 
-    getBlock(height){        
+    getBlock(height){
         return new Promise(function (resolve, reject) {
             blockChain.getBlock(height,(error,data)=>{
-                if(data){                                               
+                if(data){
                     resolve(data);
-                }    
+                }
                 else{
-                    reject(error);   
-                } 
+                    reject(error);
+                }
             })
         });
     }

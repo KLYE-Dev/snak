@@ -1,0 +1,280 @@
+/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:135
+  throw err;
+  ^
+
+Error: Could not locate the bindings file. Tried:
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node
+    at bindings (/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:126:9)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/index.js:1:37)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/src/tenderKeys.js:5:17)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/index.js:3:18)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18) {
+  tries: [
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node'
+  ]
+}
+/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:135
+  throw err;
+  ^
+
+Error: Could not locate the bindings file. Tried:
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node
+    at bindings (/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:126:9)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/index.js:1:37)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/src/tenderKeys.js:5:17)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/index.js:3:18)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18) {
+  tries: [
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node'
+  ]
+}
+/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:135
+  throw err;
+  ^
+
+Error: Could not locate the bindings file. Tried:
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node
+    at bindings (/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:126:9)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/index.js:1:37)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/src/tenderKeys.js:5:17)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/index.js:3:18)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18) {
+  tries: [
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node'
+  ]
+}
+/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:135
+  throw err;
+  ^
+
+Error: Could not locate the bindings file. Tried:
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node
+    at bindings (/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:126:9)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/index.js:1:37)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/src/tenderKeys.js:5:17)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/index.js:3:18)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18) {
+  tries: [
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node'
+  ]
+}
+/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:135
+  throw err;
+  ^
+
+Error: Could not locate the bindings file. Tried:
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node
+ → /mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node
+    at bindings (/mnt/c/users/klye/projects/hsc-cli/node_modules/bindings/bindings.js:126:9)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/index.js:1:37)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/src/tenderKeys.js:5:17)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/mnt/c/users/klye/projects/hsc-cli/node_modules/tenderkeys/index.js:3:18)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18) {
+  tries: [
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Debug/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/out/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/Release/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/build/default/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/compiled/12.21.0/linux/x64/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/release/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/debug/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/addon-build/default/install-root/ed25519.node',
+    '/mnt/c/users/klye/projects/hsc-cli/node_modules/ed25519/lib/binding/node-v72-linux-x64/ed25519.node'
+  ]
+}
